@@ -3,19 +3,31 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-    <fragment
-        android:id="@+id/f1"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Brad Big Company"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="change"
+        android:text="Change"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2sp"
+        android:background="#000"
+        />
+    <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:name="com.org.iii.shine28.F1"
         />
-    <fragment 
-        android:id="@+id/f2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:name="com.org.iii.shine28.F2"
-        />
+
+
+
 </LinearLayout>
