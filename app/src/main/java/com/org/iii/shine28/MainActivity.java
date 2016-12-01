@@ -4,8 +4,10 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private FragmentManager fmgr;
@@ -13,11 +15,14 @@ public class MainActivity extends AppCompatActivity {
     private F1 f1;
     private F2 f2;
     private boolean isF2;
+    private TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        title = (TextView)findViewById(R.id.title);
 
         f1 = F1.newInstance();
         f2 = new F2();
@@ -34,9 +39,13 @@ public class MainActivity extends AppCompatActivity {
 
         tran =  fmgr.beginTransaction();
         tran.replace(R.id.container, isF2?f2:f1);
-        //返回建 會回去
-        //tran.addToBackStack(null);
+        //會堆疊 所以返回有用
+        tran.addToBackStack(null);
         tran.commit();
 
     }
+    public void changeTitle(){
+        title.setText("III");
+    }
+
 }
