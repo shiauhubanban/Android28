@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         tran =  fmgr.beginTransaction();
         tran.replace(R.id.container, isF2?f2:f1);
-        //會堆疊 所以返回有用
+        //堆疊 所以返回有用
         tran.addToBackStack(null);
         tran.commit();
 
@@ -47,5 +47,8 @@ public class MainActivity extends AppCompatActivity {
     public void changeTitle(){
         title.setText("III");
     }
+
+    public F1 getF1(){return f1;}
+    public F2 getF2(){return f2;}
 
 }

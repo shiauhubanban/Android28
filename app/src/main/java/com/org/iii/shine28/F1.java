@@ -72,8 +72,9 @@ public class F1 extends Fragment {
     }
 
     private void doBtn2(){
-        main.changeTitle();
-        main.change(null);
+        //main.changeTitle();
+        //main.change(null);
+        main.getF2().chanegF2Mesg(strLottery);
     }
 
 }
