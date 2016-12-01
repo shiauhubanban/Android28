@@ -11,7 +11,7 @@
         android:layout_weight="1"
         android:name="com.org.iii.shine28.F1"
         />
-    <fragment
+    <fragment 
         android:id="@+id/f2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
