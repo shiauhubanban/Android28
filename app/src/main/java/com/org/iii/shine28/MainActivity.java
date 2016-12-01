@@ -4,6 +4,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.FrameLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -11,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private FragmentTransaction tran;
     private F1 f1;
     private F2 f2;
+    private boolean isF2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,17 @@ public class MainActivity extends AppCompatActivity {
         fmgr = getFragmentManager();
         tran =  fmgr.beginTransaction();
         tran.add(R.id.container, f1);
+        tran.commit();
+
+    }
+
+    public void change(View v){
+        isF2 = !isF2;
+
+        tran =  fmgr.beginTransaction();
+        tran.replace(R.id.container, isF2?f2:f1);
+        //返回建 會回去
+        //tran.addToBackStack(null);
         tran.commit();
 
     }
